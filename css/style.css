@@ -48,10 +48,15 @@ h1 {
     margin-bottom: 50px;
 }
 
+#multitap {
+    color: rgb(97, 83, 83);
+    font-size: 18px;
+}
+
 .bottom_wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center ;
+    align-items: center;
 }
 
 .charge {

@@ -1,13 +1,16 @@
 let coin = document.getElementById("coin");
 let main_amount = document.getElementById("main_amount");
-// main_amount.textContent = 999989
+let multitap = document.getElementById("multitap")
 
 let getCoin = JSON.parse(localStorage.getItem("coin"));
-let storageCash = localStorage.setItem("coin", getCoin || '0');
+let getMultitap = JSON.parse(localStorage.getItem("multitap"))
+let storageCash = localStorage.setItem("coin", getCoin | 0);
+let storagemultitap = localStorage.setItem("multitap", getMultitap | 1)
 
-main_amount.textContent = getCoin | 0
+main_amount.textContent = getCoin | 0;
+multitap.textContent = "+" + (getMultitap)
 
-console.log(getCoin);
+console.log(getCoin, getMultitap);
 main_amount.textContent = numberWithCommas(main_amount.textContent)
 
 function numberWithCommas(x) {
@@ -19,8 +22,7 @@ function numberWithCommas(x) {
 }
 
 coin.onclick = () => {
-    let toNumber = +main_amount.textContent.split(',').join('');
-    getCoin += 1;
+    getCoin += getMultitap;
     console.log(getCoin);
     localStorage.setItem("coin", JSON.stringify(getCoin));
     main_amount.textContent = numberWithCommas(getCoin);
