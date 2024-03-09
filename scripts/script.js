@@ -9,8 +9,6 @@ let storagemultitap = localStorage.setItem("multitap", getMultitap | 1)
 
 main_amount.textContent = getCoin | 0;
 multitap.textContent = "+" + (getMultitap)
-
-console.log(getCoin, getMultitap);
 main_amount.textContent = numberWithCommas(main_amount.textContent)
 
 function numberWithCommas(x) {
@@ -23,7 +21,6 @@ function numberWithCommas(x) {
 
 coin.onclick = () => {
     getCoin += getMultitap;
-    console.log(getCoin);
     localStorage.setItem("coin", JSON.stringify(getCoin));
     main_amount.textContent = numberWithCommas(getCoin);
 }
